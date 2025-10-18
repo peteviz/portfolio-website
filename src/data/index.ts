@@ -36,6 +36,9 @@ export const skills: Skill[] = [
   { name: "Next.js", level: 90, category: "frontend", icon: "nextjs" },
   { name: "TypeScript", level: 88, category: "frontend", icon: "typescript" },
   { name: "Tailwind CSS", level: 92, category: "frontend", icon: "tailwind" },
+    { name: "JavaScript", level: 90, category: "frontend", icon: "javascript" },
+    {name: "rechart", level: 85, category: "frontend", icon: "rechart"},
+    {name: "Babylon.js", level: 80, category: "frontend", icon: "babylonjs"},
 
   // Tools & Technologies
   { name: "Git", level: 90, category: "tools", icon: "git" },
@@ -57,7 +60,7 @@ export const skills: Skill[] = [
     { name: "Pandas", level: 72, category: "ML/AI", icon: "pandas" },
     { name: "Scikit-learn", level: 68, category: "ML/AI", icon: "sklearn" },
     { name: "Matplotlib", level: 65, category: "ML/AI", icon: "matplotlib" },
-    { name: "Jupyter Notebooks", level: 80, category: "tools", icon: "jupyter" },
+    // { name: "Jupyter Notebooks", level: 80, category: "tools", icon: "jupyter" },
     { name: "Linear Regression", level: 70, category: "ML/AI", icon: "chart-line" },
     { name: "Data Preprocessing", level: 75, category: "ML/AI", icon: "database" },
     { name: "Feature Engineering", level: 60, category: "ML/AI", icon: "settings" },
@@ -65,93 +68,70 @@ export const skills: Skill[] = [
 ]
 
 export const projects: Project[] = [
-  {
-    id: "1",
-    title: "EcoConstruct Dashboard",
-    description: "A comprehensive web application for monitoring and managing sustainable construction projects with real-time environmental impact tracking.",
-    longDescription: "EcoConstruct Dashboard is a full-stack web application that helps construction companies track their environmental impact in real-time. The platform integrates IoT sensors, provides detailed analytics, and offers actionable insights for reducing carbon footprint.",
-    technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Chart.js", "Tailwind CSS"],
-    category: "sustainability",
-    image: "/images/projects/ecoconstruct.jpg",
-    liveUrl: "https://ecoconstruct-dashboard.vercel.app",
-    githubUrl: "https://github.com/akinde-peter/ecoconstruct-dashboard",
-    featured: true,
-    year: 2024,
-    challenges: "Integrating real-time IoT data streams with complex environmental calculations while maintaining high performance.",
-    solution: "Implemented efficient data processing pipelines using WebSockets and optimized database queries with proper indexing.",
-    impact: "Helped 15+ construction companies reduce their carbon footprint by an average of 25%."
-  },
-  {
-    id: "2",
-    title: "Portfolio Website",
-    description: "A modern, responsive portfolio website showcasing advanced animations and interactive elements built with Next.js and Framer Motion.",
-    longDescription: "This portfolio website demonstrates advanced frontend development skills with smooth animations, interactive elements, and optimized performance. Built with modern technologies and best practices.",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "GSAP", "React Hook Form"],
-    category: "frontend",
-    image: "/images/projects/portfolio.jpg",
-    liveUrl: "https://akinde-peter.vercel.app",
-    githubUrl: "https://github.com/akinde-peter/portfolio-website",
-    featured: true,
-    year: 2024,
-    challenges: "Creating smooth, performant animations while maintaining accessibility and mobile responsiveness.",
-    solution: "Utilized Framer Motion for complex animations and implemented proper accessibility features with reduced motion preferences.",
-    impact: "Achieved 95+ Lighthouse scores across all metrics and 40% increase in professional inquiries."
-  },
-  {
-    id: "3",
-    title: "Green Materials Database",
-    description: "A comprehensive database and search platform for sustainable construction materials with detailed environmental impact ratings.",
-    longDescription: "An extensive database of eco-friendly construction materials with detailed specifications, environmental ratings, and supplier information to help architects and engineers make informed decisions.",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "Material-UI", "Elasticsearch"],
-    category: "sustainability",
-    image: "/images/projects/green-materials.jpg",
-    liveUrl: "https://green-materials-db.com",
-    githubUrl: "https://github.com/akinde-peter/green-materials-db",
-    featured: true,
-    year: 2023,
-    challenges: "Managing large datasets and providing fast, accurate search functionality across multiple material categories.",
-    solution: "Implemented Elasticsearch for powerful search capabilities and optimized database schemas for quick queries.",
-    impact: "Used by 200+ architects and engineers, contributing to more sustainable material choices in construction projects."
-  },
-  {
-    id: "4",
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates, team collaboration features, and productivity analytics.",
-    technologies: ["React", "Firebase", "Material-UI", "Chart.js"],
-    category: "fullstack",
-    image: "/images/projects/task-manager.jpg",
-    liveUrl: "https://task-manager-pro.vercel.app",
-    githubUrl: "https://github.com/akinde-peter/task-manager",
-    featured: false,
-    year: 2023
-  },
-  {
-    id: "5",
-    title: "Energy Efficiency Calculator",
-    description: "A web tool that helps building owners calculate potential energy savings from various sustainability improvements.",
-    technologies: ["Vue.js", "Node.js", "D3.js", "Bootstrap"],
-    category: "sustainability",
-    image: "/images/projects/energy-calculator.jpg",
-    liveUrl: "https://energy-calc-tool.com",
-    githubUrl: "https://github.com/akinde-peter/energy-calculator",
-    featured: false,
-    year: 2022
-  }
+    {
+        "id": "1",
+        "title": "Skill Sync",
+        "description": "SkillsConnect is a dynamic web app empowering university students to share skills, collaborate on projects, and connect with recruiters through an AI-enhanced marketplace.",
+        "longDescription": "SkillsConnect is an innovative web-based single-page application designed to revolutionize the university student experience by providing a comprehensive platform for skill-sharing, project collaboration, community building, and a student marketplace. Built with cutting-edge technologies like React 19, TypeScript, MongoDB with Mongoose, Next.js 14, Supabase, Tailwind CSS (featuring an aurora-inspired palette of Teal #00C4B4, Coral #FF6F61, Indigo #4B0082, and Cream #FFF8E7), and Framer Motion, the app integrates xAI’s Grok API to deliver AI-driven features. Students can showcase their skillsets, build ratings from peer interactions, and present CVs, portfolios, and interests, while recruiters discover and reach out based on sophisticated metrics. Launched in collaboration with Deggendorf Institute of Technology, SkillsConnect accelerates development with AI tools like Cursor, aiming to connect 500 students and 10 recruiters in its initial November 2025 pilot, with plans to scale globally by 2027.",
+        "technologies": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Chart.js", "Tailwind CSS"],
+        "category": "education",
+        "image": "/images/projects/ecoconstruct.jpg",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/peteviz/skillSync",
+        "featured": true,
+        "year": 2025,
+        "challenges": "",
+        "solution": "",
+        "impact": ""
+    },
+    {
+        "id": "2",
+        "title": "Financial Machine Learning Portfolio Projects",
+        "description": "This repository contains two production-ready financial ML applications using the S&P 500 Stocks sentiment dataset from HuggingFace, demonstrating advanced skills in NLP, time-series analysis, and financial modeling.",
+        "longDescription": "The repository features two comprehensive projects focused on financial machine learning applications leveraging sentiment analysis from news data. Project 1 is an end-to-end ML pipeline called the News Sentiment-Based Stock Price Predictor, which predicts next-day stock returns by integrating news sentiment analysis with historical price data and deploys it via an interactive Streamlit dashboard; it includes advanced feature engineering such as sentiment features (rolling averages, volatility, momentum), technical indicators (RSI, MACD, Bollinger Bands), text features (TF-IDF, BERT embeddings), and temporal/volume-weighted features, along with model architectures like LSTM with Multi-head Attention, GRU, Facebook Prophet with sentiment regressors, and an LSTM + XGBoost ensemble, evaluated using metrics including RMSE, MAE, MAPE, R², Sharpe Ratio, Maximum Drawdown, Hit Rate, Profit Factor, Win Rate, and Calmar Ratio, with dashboard features for real-time visualization, model training, prediction generation with confidence intervals, risk analysis, backtesting, and feature importance visualization. Project 2 is the Ticker-Specific Sentiment Trend Analyzer, an unsupervised learning system that clusters S&P 500 stocks by sentiment patterns, identifies anomalies, and provides a recommendation engine for similar-sentiment stocks; it incorporates a comprehensive feature matrix with 30+ sentiment-based features per ticker, time-series characteristics (trend, seasonality, autocorrelation), distribution properties (skew, kurtosis, extremes), and Fourier transform components, using clustering pipelines with dimensionality reduction (PCA, t-SNE, UMAP), algorithms (K-Means, DBSCAN, GMM, HDBSCAN), optimal cluster detection, and validation metrics, plus anomaly detection via Isolation Forest, Local Outlier Factor, statistical methods, and consensus identification, alongside a recommendation engine based on cosine similarity, cluster-aware suggestions, and similarity network visualization, with dashboard features including 3D cluster visualization, interactive ticker selection, anomaly alerts, stock recommendations, network graphs, and downloadable feature matrices. The projects aim to achieve performance targets such as R² > 0.65, MAPE < 5%, Sharpe > 1.5, Hit Rate > 55% for Project 1, and Silhouette Score > 0.45, Precision > 0.7, Recall > 0.6, and recommendation hit rate > 60% for Project 2, with expected results like LSTM RMSE ~0.025, Hit Rate ~58%, Sharpe Ratio ~1.2, R² ~0.72 for AAPL in Project 1, and 4-6 clusters, Silhouette Score ~0.52, 2-3 anomalies, and 85%+ recommendation accuracy for tech stocks in Project 2. Key innovations include multi-modal feature engineering, attention-based LSTM, ensemble learning, consensus anomaly detection, and interactive dashboards. The purpose is to showcase advanced quantitative finance applications through production-ready implementations.",
+        "technologies": ["Python", "Streamlit", "HuggingFace", "TA-Lib", "PyTorch", "LSTM", "GRU", "Facebook Prophet", "XGBoost", "PCA", "t-SNE", "UMAP", "K-Means", "DBSCAN", "GMM", "HDBSCAN", "Isolation Forest", "Local Outlier Factor"],
+        "category": "ML/AI",
+        "image": "/images/projects/fin-ml-sentiment-predictor-dashboard.jpg",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/peteviz/fin-ml-sentiment-predictor-dashboard",
+        "featured": false,
+        "year": 2025,
+        "challenges": "HuggingFace dataset loading failures, PyTorch CUDA issues, Memory issues.",
+        "solution": "For dataset loading: Export HF_DATASETS_CACHE. For CUDA issues: Set device to 'cpu'. For memory issues: Adjust batch_size and sequence_length. General installation and deployment solutions provided.",
+        "impact": "Demonstrates production-ready applications for quantitative finance, enabling better stock return predictions, anomaly detection, and recommendation systems, potentially improving risk-adjusted returns and trading decisions."
+    },
+    {
+        "id": "3",
+        "title": "Abbreviation Extractor",
+        "description": "This project is an Abbreviation Extractor application built using Next.js, React, and Tailwind CSS that allows users to upload a Word document (.doc or .docx) and extracts the abbreviations and their definitions using Artificial Intelligence.",
+        "longDescription": "The Abbreviation Extractor is a web application designed to process uploaded Word documents and automatically identify abbreviations along with their contextual definitions through AI integration. Its purpose is to simplify the extraction of such information from documents, making it useful for tasks like document analysis or research. Key features include a user-friendly file upload interface on the main page, backend API processing for document handling, AI-driven extraction of abbreviations and meanings, and display of the results on the frontend. The workflow involves sending the uploaded document to the API, where it is analyzed by AI, and then returning the extracted data for user viewing. The application supports smooth interactions with animations and additional UI components for enhanced usability.",
+        "technologies": ["Next.js", "React", "Tailwind CSS", "Material-UI", "Framer Motion", "Artificial Intelligence"],
+        "category": "ML/AI",
+        "image": "/images/projects/abbreviator-extractor-ai.jpg",
+        "liveUrl": "",
+        "githubUrl": "https://github.com/peteviz/Abbreviator_Extractor_AI",
+        "featured": false,
+        "year": 2025,
+        "challenges": "",
+        "solution": "",
+        "impact": ""
+    }
 ]
 
 export const experiences: Experience[] = [
   {
     id: "1",
-    company: "GreenTech Solutions",
-    position: "Senior Frontend Developer & Sustainability Consultant",
-    startDate: "2023-01",
-    description: "Leading the development of web applications focused on environmental sustainability in construction while mentoring junior developers.",
-    technologies: ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+    company: "Urbanistic GmbH",
+    position: "Frontend Developer & Sustainability Consultant",
+    startDate: "2023-12",
+    description: "Development of 3D Urban Planning and sustainability SaaS product.",
+    technologies: ["React", "Java", "TypeScript", "Babylon.js", "Redux"],
     achievements: [
-      "Developed 3 major sustainability tracking applications serving 50+ construction companies",
-      "Reduced application load times by 40% through optimization techniques",
-      "Led a team of 4 developers in implementing sustainable development practices",
-      "Collaborated with environmental engineers to translate complex sustainability metrics into user-friendly interfaces"
+      "Directed web performance optimizations through strategic use of lazy loading, code splitting, and caching mechanisms, achieving a 40% reduction in load times and elevating Lighthouse scores to 95+, showcasing proficiency in performance tuning for high-traffic environments",
+      "Took ownership of developing and maintaining critical front-end features, ensuring seamless functionality and high user satisfaction through rigorous testing and iterative improvements",
+      "Championed a comprehensive refactor of the entire codebase, applying  great level of detail and expertise to enhance readability, scalability, tree shaking and overall performance.",
+      "Pioneered enhancements to 3D modeling capabilities using Babylon.js, enabling real-time object manipulation and automated building simulations that reduced simulation times by 50% and improved project evaluation accuracy, highlighting advanced skills in interactive web graphics",
+      "Designed and automated ESG-related workflows with custom algorithms for sustainability analysis, creating energy prediction tools requiring minimal user input and cutting manual labor, while leading initiatives to integrate these features into the core platform for greater operational efficiency."
     ],
     type: "hybrid"
   },

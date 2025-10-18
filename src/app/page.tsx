@@ -8,7 +8,7 @@ import ProfileTabs from '../components/ProfileTabs'
 import Projects from '../components/Projects'
 import SustainabilityProjects from '../components/SustainabilityProjects'
 import Articles from '../components/Articles'
-// import Contact from '../components/Contact'
+import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import LoadingScreen from '../components/LoadingScreen'
 
@@ -43,7 +43,7 @@ export default function HomePage() {
           <Projects />
           <SustainabilityProjects />
           <Articles />
-          {/*<Contact />*/}
+          <Contact />
           <Footer />
         </motion.main>
       )}

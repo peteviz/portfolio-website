@@ -119,22 +119,22 @@ const About = () => {
             </div>
 
             {/* Contact Information */}
-            <div className='space-y-3 mb-6'>
-              <div className='flex items-center justify-center lg:justify-start gap-3 text-gray-600'>
-                <MapPin className='w-5 h-5 text-primary' />
-                <span>{personalInfo.location}</span>
+              <div className='space-y-3 mb-6'>
+                  <div className='flex items-center justify-center lg:justify-start gap-3 text-gray-600 dark:text-dark-text'>
+                      <MapPin className='w-5 h-5 text-primary dark:text-white' />
+                      <span>{personalInfo.location}</span>
+                  </div>
+                  <div className='flex items-center justify-center lg:justify-start gap-3 text-gray-600 dark:text-dark-text'>
+                      <Mail className='w-5 h-5 text-primary dark:text-white' />
+                      <span>{personalInfo.email}</span>
+                  </div>
+                  {personalInfo.phone && (
+                      <div className='flex items-center justify-center lg:justify-start gap-3 text-gray-600 dark:text-dark-text'>
+                          <Phone className='w-5 h-5 text-primary dark:text-white' />
+                          <span>{personalInfo.phone}</span>
+                      </div>
+                  )}
               </div>
-              <div className='flex items-center justify-center lg:justify-start gap-3 text-gray-600'>
-                <Mail className='w-5 h-5 text-primary' />
-                <span>{personalInfo.email}</span>
-              </div>
-              {personalInfo.phone && (
-                <div className='flex items-center justify-center lg:justify-start gap-3 text-gray-600'>
-                  <Phone className='w-5 h-5 text-primary' />
-                  <span>{personalInfo.phone}</span>
-                </div>
-              )}
-            </div>
 
             {/*/!* Download Resume Button *!/*/}
             {/*<motion.a*/}
