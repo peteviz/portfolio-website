@@ -3,9 +3,13 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  output: 'export',
+  trailingSlash: true,
+  basePath: '/portfolio-website',
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com', 'media.licdn.com'],
     formats: ['image/webp', 'image/avif'],
+    unoptimized: true,
   },
   async headers() {
     return [
