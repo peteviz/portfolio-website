@@ -135,38 +135,38 @@ export const experiences: Experience[] = [
     ],
     type: "hybrid"
   },
-  {
-    id: "2",
-    company: "BuildSmart Construction",
-    position: "Frontend Developer & LEED Consultant",
-    startDate: "2021-06",
-    endDate: "2022-12",
-    description: "Developed web applications for construction project management while providing LEED certification guidance.",
-    technologies: ["React", "Vue.js", "SCSS", "Node.js", "MongoDB"],
-    achievements: [
-      "Built project management dashboard used by 20+ construction teams",
-      "Assisted 10 building projects achieve LEED Gold certification",
-      "Implemented responsive design principles reducing mobile bounce rate by 35%",
-      "Created automated reporting system for sustainability metrics tracking"
-    ],
-    type: "hybrid"
-  },
-  {
-    id: "3",
-    company: "EcoArchitects Ltd",
-    position: "Junior Web Developer & Sustainability Analyst",
-    startDate: "2020-01",
-    endDate: "2021-05",
-    description: "Supported web development projects while analyzing environmental impact of building designs.",
-    technologies: ["JavaScript", "HTML5", "CSS3", "WordPress", "MySQL"],
-    achievements: [
-      "Maintained and updated company website increasing organic traffic by 60%",
-      "Conducted environmental impact assessments for 15+ building projects",
-      "Developed custom WordPress plugins for project showcase functionality",
-      "Created educational content about sustainable building practices"
-    ],
-    type: "hybrid"
-  }
+  // {
+  //   id: "2",
+  //   company: "BuildSmart Construction",
+  //   position: "Frontend Developer & LEED Consultant",
+  //   startDate: "2021-06",
+  //   endDate: "2022-12",
+  //   description: "Developed web applications for construction project management while providing LEED certification guidance.",
+  //   technologies: ["React", "Vue.js", "SCSS", "Node.js", "MongoDB"],
+  //   achievements: [
+  //     "Built project management dashboard used by 20+ construction teams",
+  //     "Assisted 10 building projects achieve LEED Gold certification",
+  //     "Implemented responsive design principles reducing mobile bounce rate by 35%",
+  //     "Created automated reporting system for sustainability metrics tracking"
+  //   ],
+  //   type: "hybrid"
+  // },
+  // {
+  //   id: "3",
+  //   company: "EcoArchitects Ltd",
+  //   position: "Junior Web Developer & Sustainability Analyst",
+  //   startDate: "2020-01",
+  //   endDate: "2021-05",
+  //   description: "Supported web development projects while analyzing environmental impact of building designs.",
+  //   technologies: ["JavaScript", "HTML5", "CSS3", "WordPress", "MySQL"],
+  //   achievements: [
+  //     "Maintained and updated company website increasing organic traffic by 60%",
+  //     "Conducted environmental impact assessments for 15+ building projects",
+  //     "Developed custom WordPress plugins for project showcase functionality",
+  //     "Created educational content about sustainable building practices"
+  //   ],
+  //   type: "hybrid"
+  // }
 ]
 
 export const education: Education[] = [
