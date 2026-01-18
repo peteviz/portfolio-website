@@ -1,7 +1,7 @@
 import { PersonalInfo, Project, Experience, Education, Skill, Article } from '../types'
 
 // Base path for GitHub Pages deployment
-const basePath = '/portfolio-website'
+const basePath = ''
 
 export const personalInfo: PersonalInfo = {
   name: "Akinde Peter",
