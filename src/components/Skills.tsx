@@ -29,7 +29,7 @@ const Skills = () => {
   const categoryOrder = ['frontend', 'backend', 'sustainability', 'ML/AI', 'tools', 'programming']
 
   return (
-    <section ref={ref} className="py-24 bg-gray-50 dark:bg-dark-surface transition-colors duration-300">
+    <section ref={ref} className="py-16 bg-gray-50 dark:bg-dark-surface transition-colors duration-300">
       <div className="container mx-auto px-6">
         {/* Header */}
         <motion.div

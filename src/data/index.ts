@@ -267,6 +267,6 @@ export const articles: Article[] = [
     readingTime: 15,
     featuredImage: `${basePath}/images/articles/carbon-risk-assessment.png`,
     author: "Akinde Peter (Lead Author)",
-    externalUrl: "https://doi.org/10.36227/techrxiv.1077577"
+    externalUrl: "https://www.techrxiv.org/1377171"
   }
 ]

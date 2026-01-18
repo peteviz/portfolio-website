@@ -36,7 +36,7 @@ const Experience = () => {
   return (
     <section
       ref={ref}
-      className="py-24 bg-white dark:bg-dark-bg scroll-mt-24"
+      className="py-16 bg-white dark:bg-dark-bg scroll-mt-24"
     >
       <div className="container mx-auto px-6">
         {/* Header Section */}

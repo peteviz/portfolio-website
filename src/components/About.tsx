@@ -43,10 +43,10 @@ const About = () => {
   ]
 
   return (
-    <section ref={ref} className='py-24 bg-white dark:bg-dark-bg transition-colors duration-300'>
+    <section ref={ref} className='py-16 bg-white dark:bg-dark-bg transition-colors duration-300'>
       <div className='container mx-auto px-6'>
         {/* Main Content Grid */}
-        <div className='grid lg:grid-cols-5 gap-16 mb-24'>
+        <div className='grid lg:grid-cols-5 gap-16 mb-16'>
           {/* Profile Image & Contact Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -110,7 +110,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className='mb-24'
+          className='mb-8'
         >
           <h3 className='text-sm font-medium text-gray-400 dark:text-dark-text-secondary uppercase tracking-wider mb-8'>
             Core Values

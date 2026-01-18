@@ -17,7 +17,7 @@ export default function Education() {
   ]
 
   return (
-    <section id="education" className="py-24 bg-white dark:bg-dark-bg transition-colors duration-300">
+    <section id="education" className="py-16 bg-white dark:bg-dark-bg transition-colors duration-300">
       <div className="container mx-auto px-6" ref={ref}>
         <div className="max-w-4xl mx-auto">
           {/* Section Header */}

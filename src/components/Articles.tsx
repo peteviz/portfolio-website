@@ -2,7 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView, AnimatePresence, inView } from 'framer-motion'
-import { Calendar, Clock, ArrowRight, X } from 'lucide-react'
+import { Calendar, Clock, ArrowRight, X, Maximize2 } from 'lucide-react'
 import { articles, personalInfo } from '../data'
 import { formatDate } from '../lib/utils'
 
@@ -46,7 +46,7 @@ export default function Articles() {
                   {/* Featured Image */}
                   {article.featuredImage && (
                     <div
-                      className="w-full md:w-48 h-32 flex-shrink-0 overflow-hidden rounded-lg cursor-pointer"
+                      className="w-full md:w-48 h-32 flex-shrink-0 overflow-hidden rounded-lg cursor-pointer relative group/image"
                       onClick={() => setSelectedImage(article.featuredImage)}
                     >
                       <img
@@ -54,12 +54,16 @@ export default function Articles() {
                         alt={article.title}
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
                       />
+                      {/* Expand Indicator */}
+                      <div className="absolute top-2 right-2 p-1.5 bg-black/50 rounded-full text-white backdrop-blur-sm opacity-100 md:opacity-0 md:group-hover/image:opacity-100 transition-opacity duration-300">
+                        <Maximize2 size={16} />
+                      </div>
                     </div>
                   )}
 
                   {/* Content */}
                   <div className="flex-1">
-                    <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-dark-text-secondary mb-2">
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-dark-text-secondary mb-2">
                       <span className="font-medium uppercase tracking-wider">Research Paper</span>
                       <span>•</span>
                       <div className="flex items-center gap-1">

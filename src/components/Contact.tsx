@@ -64,7 +64,7 @@ const Contact = () => {
       {/* Floating Chat Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 bg-primary hover:bg-primary/90 dark:bg-secondary dark:hover:bg-secondary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-primary hover:bg-primary/90 dark:bg-secondary dark:hover:bg-secondary/90 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         initial={{ opacity: 0, scale: 0 }}
@@ -93,7 +93,7 @@ const Contact = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 100, scale: 0.8 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="fixed bottom-6 right-6 z-50 w-full max-w-md bg-white dark:bg-dark-surface rounded-2xl shadow-2xl overflow-hidden"
+              className="fixed bottom-0 left-0 right-0 sm:bottom-6 sm:right-6 sm:left-auto z-50 w-full sm:w-full sm:max-w-md bg-white dark:bg-dark-surface sm:rounded-2xl rounded-t-2xl shadow-2xl overflow-hidden max-h-[90vh]"
             >
               {/* Header */}
               <div className="flex items-center justify-between p-3 bg-primary dark:bg-secondary text-white">

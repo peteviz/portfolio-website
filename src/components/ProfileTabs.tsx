@@ -50,13 +50,13 @@ export default function ProfileTabs() {
 			{/* Tab Buttons - Fixed Position */}
 			<div className="w-full bg-white dark:bg-dark-bg shadow-sm border-b dark:border-dark-border top-16 z-10 transition-colors duration-300">
 				<div className="container mx-auto px-4 py-6">
-					<div className="flex justify-center">
-						<div className="flex space-x-2 bg-gray-100 dark:bg-dark-surface rounded-xl p-1 transition-colors duration-300">
+					<div className="flex justify-center overflow-x-auto">
+						<div className="flex space-x-1 sm:space-x-2 bg-gray-100 dark:bg-dark-surface rounded-xl p-1 transition-colors duration-300">
 							{tabs.map((tab, idx) => (
 								<button
 									key={tab.name}
 									onClick={() => handleTabClick(idx, tab.name)}
-									className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50
+									className={`px-3 py-2 sm:px-6 sm:py-3 rounded-lg text-sm sm:text-base font-semibold whitespace-nowrap transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50
                     ${selected === idx
 											? 'bg-primary text-white shadow-md transform scale-105'
 											: 'bg-transparent text-gray-600 dark:text-dark-text-secondary hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary dark:hover:text-primary'

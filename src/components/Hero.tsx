@@ -12,7 +12,7 @@ const Hero = () => {
   const { theme } = useTheme()
 
   return (
-    <section id="hero" className="relative flex h-screen max-h-[100vh] flex-col items-center justify-center overflow-hidden text-center scroll-mt-16 bg-white dark:bg-dark-bg transition-colors duration-300">
+    <section id="hero" className="relative flex h-screen max-h-[100vh] flex-col items-center justify-center overflow-hidden text-center scroll-mt-16 bg-white dark:bg-dark-bg transition-colors duration-300 w-full max-w-[100vw]">
       <div className="z-20 px-6">
         <h1 className="mb-4 text-5xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-dark-text tracking-tight">
           {personalInfo.name}
@@ -20,7 +20,7 @@ const Hero = () => {
         <h2 className="mb-10 text-xl md:text-2xl font-medium text-gray-500 dark:text-dark-text-secondary">
           {personalInfo.title}
         </h2>
-        <div className="flex justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-3">
           <a
             href={personalInfo.github}
             target="_blank"
@@ -48,14 +48,21 @@ const Hero = () => {
           </a>
         </div>
         {/* GitHub Contributions Calendar */}
-        <div className="mt-12 flex justify-center">
-          <GitHubCalendar
-            username={githubUsername}
-            blockSize={12}
-            blockMargin={3}
-            colorScheme={theme === 'light' ? 'light' : 'dark'}
-            fontSize={12}
-          />
+        <div className="mt-12 w-full max-w-[100vw] overflow-hidden px-4">
+          <div className="w-full overflow-x-auto pb-4 no-scrollbar">
+            <div className="min-w-fit mx-auto">
+              <GitHubCalendar
+                username={githubUsername}
+                blockSize={10}
+                blockMargin={4}
+                colorScheme={theme === 'light' ? 'light' : 'dark'}
+                fontSize={12}
+                style={{
+                  maxWidth: '100%',
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2">
