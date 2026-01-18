@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
 import Image from 'next/image'
+import { personalInfo } from '../data'
 
 export default function LoadingScreen() {
   return (
@@ -26,8 +27,8 @@ export default function LoadingScreen() {
             className="mb-4"
           >
             <Image
-              src='https://media.licdn.com/dms/image/v2/D4E03AQFmennV76E4Hg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1728550256630?e=1761177600&v=beta&t=_webWKDsFO-WkEdW0ygePy6ZNsm0GuoXBmJhWSf-LS0'
-              alt="Portrait"
+              src={personalInfo.profileImage}
+              alt={personalInfo.name}
               width={286}
               height={286}
               className="rounded-full shadow-lg border-4 border-secondary mx-auto"
@@ -35,14 +36,26 @@ export default function LoadingScreen() {
             />
           </motion.div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-2 min-h-[56px] font-montserrat">
-            Akinde Peter
+            {personalInfo.name}
           </h1>
-          <p className="text-xl text-neutral opacity-80 min-h-[32px] font-fira">
+          {/* <p className="text-xl text-neutral opacity-80 min-h-[32px] font-fira">
             <Typewriter
               words={["Innovation Meets Sustainability"]}
               loop={1}
               cursor
               cursorStyle="_"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={1200}
+            />
+          </p> */}
+          <p className="text-xl text-[#9BE9A8] opacity-80 min-h-[32px] font-fira">
+            <Typewriter
+              words={["Innovation Meets Sustainability"]}
+              loop={1}
+              cursor
+              cursorStyle="_"
+              cursorColor="#9BE9A8"
               typeSpeed={60}
               deleteSpeed={40}
               delaySpeed={1200}

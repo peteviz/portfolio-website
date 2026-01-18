@@ -58,6 +58,7 @@ export interface Article {
   readingTime: number;
   featuredImage: string;
   author: string;
+  externalUrl?: string;
 }
 
 export interface ContactForm {
@@ -80,7 +81,7 @@ export interface PersonalInfo {
   bio: string;
   email: string;
   github: string;
-    linkedIn: string;
+  linkedIn: string;
 
   phone?: string;
   location: string;

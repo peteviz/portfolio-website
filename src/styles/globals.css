@@ -7,10 +7,6 @@
 
 :root {
   --primary: #2C3E50;
-  --secondary: #88B04B;
-  --accent: #FF6F61;
-  --neutral: #ECF0F1;
-  --charcoal: #34495E;
 }
 
 * {
@@ -41,32 +37,28 @@ body {
   @apply py-16 lg:py-24;
 }
 
-.gradient-text {
-  @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
-}
-
-.glass-effect {
-  @apply backdrop-blur-sm bg-white/10 border border-white/20;
-}
-
-.card-hover {
-  @apply transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl;
-}
-
-/* Custom scrollbar */
+/* Custom scrollbar - minimal */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--neutral);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
+  background: #d4d4d4;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #404040;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--secondary);
+  background: #a1a1a1;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #525252;
 }

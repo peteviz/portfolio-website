@@ -6,7 +6,7 @@ import Navigation from '../components/Navigation'
 import Hero from '../components/Hero'
 import ProfileTabs from '../components/ProfileTabs'
 import Projects from '../components/Projects'
-import SustainabilityProjects from '../components/SustainabilityProjects'
+
 import Articles from '../components/Articles'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
@@ -41,7 +41,7 @@ export default function HomePage() {
           <Hero />
           <ProfileTabs />
           <Projects />
-          <SustainabilityProjects />
+
           <Articles />
           <Contact />
           <Footer />

@@ -22,11 +22,10 @@ export default function Footer() {
 
   const services = [
     'Frontend Development',
-    'React/Next.js Applications',
     'Sustainability Consulting',
-    'LEED Certification Support',
-    'Environmental Impact Analysis',
-    'Green Building Solutions'
+    'Green Building Certification Support',
+    'Green Building Solutions',
+    'Urban building energy modelling'
   ]
 
   return (
@@ -133,15 +132,7 @@ export default function Footer() {
               viewport={{ once: true }}
               className="text-gray-300 text-sm flex items-center"
             >
-              © {currentYear} Akinde Peter. Made with{' '}
-              <motion.span
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-                className="mx-1 text-red-400"
-              >
-                <Heart size={14} />
-              </motion.span>
-              for a sustainable future.
+              © {currentYear} Akinde Peter. All rights reserved.
             </motion.p>
 
             <div className="flex items-center space-x-6 mt-4 md:mt-0">

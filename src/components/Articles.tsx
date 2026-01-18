@@ -1,234 +1,182 @@
 'use client'
 
-import { useRef } from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { Calendar, Clock, ArrowRight, BookOpen } from 'lucide-react'
-import { articles } from '../data'
+import { useRef, useState } from 'react'
+import { motion, useInView, AnimatePresence, inView } from 'framer-motion'
+import { Calendar, Clock, ArrowRight, X } from 'lucide-react'
+import { articles, personalInfo } from '../data'
 import { formatDate } from '../lib/utils'
 
 export default function Articles() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'sustainability':
-        return 'from-green-500 to-emerald-500'
-      case 'technology':
-        return 'from-blue-500 to-cyan-500'
-      case 'industry-insights':
-        return 'from-purple-500 to-pink-500'
-      default:
-        return 'from-gray-500 to-gray-600'
-    }
-  }
-
-  const getCategoryLabel = (category: string) => {
-    switch (category) {
-      case 'sustainability':
-        return 'Sustainability'
-      case 'technology':
-        return 'Technology'
-      case 'industry-insights':
-        return 'Industry Insights'
-      default:
-        return 'Article'
-    }
-  }
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   return (
-    <section id="articles" ref={ref} className="py-20 bg-white scroll-mt-16">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-            Latest <span className="text-primary">Articles</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Insights and thoughts on technology, sustainability, and industry trends
-          </p>
-        </motion.div>
-
-        {/* Featured Article */}
-        {articles.length > 0 && (
+    <>
+      <section id="articles" ref={ref} className="py-24 bg-gray-50 dark:bg-dark-surface scroll-mt-16">
+        <div className="container mx-auto px-6">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
             className="mb-16"
           >
-            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-              <div className="grid lg:grid-cols-2 gap-0">
-                {/* Featured Image */}
-                <div className="relative h-64 lg:h-auto">
-                  <img
-                    src={articles[0].featuredImage}
-                    alt={articles[0].title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-white text-sm font-medium bg-gradient-to-r ${getCategoryColor(articles[0].category)}`}>
-                      Featured Article
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium mb-4 w-fit bg-gradient-to-r ${getCategoryColor(articles[0].category)} text-white`}>
-                    {getCategoryLabel(articles[0].category)}
-                  </div>
-
-                  <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                    {articles[0].title}
-                  </h3>
-
-                  <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-                    {articles[0].excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Calendar size={16} className="mr-2" />
-                      <span>{formatDate(articles[0].publishedAt)}</span>
-                      <Clock size={16} className="ml-4 mr-2" />
-                      <span>{articles[0].readingTime} min read</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {articles[0].tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 bg-neutral/20 text-charcoal rounded-full text-sm"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center space-x-2 text-primary font-semibold hover:text-secondary transition-colors duration-200"
-                  >
-                    <span>Read Full Article</span>
-                    <ArrowRight size={16} />
-                  </motion.button>
-                </div>
-              </div>
-            </div>
+            <h3 className='text-sm font-medium text-gray-400 dark:text-dark-text-secondary uppercase tracking-wider mb-3'>
+              Research
+            </h3>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-dark-text mb-4">
+              Publications
+            </h2>
+            <p className="text-lg text-gray-500 dark:text-dark-text-secondary max-w-2xl">
+              Academic research and contributions to sustainable construction technology.
+            </p>
           </motion.div>
-        )}
 
-        {/* Other Articles */}
-        {articles.length > 1 && (
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {articles.slice(1).map((article, index) => (
+          {/* Publications List */}
+          <div className="space-y-8">
+            {articles.map((article, index) => (
               <motion.article
                 key={article.id}
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group"
               >
-                {/* Article Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={article.featuredImage}
-                    alt={article.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                  <div className="absolute top-4 left-4">
-                    <span className={`px-2 py-1 rounded-full text-white text-xs font-medium bg-gradient-to-r ${getCategoryColor(article.category)}`}>
-                      {getCategoryLabel(article.category)}
-                    </span>
-                  </div>
-                </div>
+                <div className="flex flex-col md:flex-row gap-6 py-6 border-b border-gray-200 dark:border-dark-border">
+                  {/* Featured Image */}
+                  {article.featuredImage && (
+                    <div
+                      className="w-full md:w-48 h-32 flex-shrink-0 overflow-hidden rounded-lg cursor-pointer"
+                      onClick={() => setSelectedImage(article.featuredImage)}
+                    >
+                      <img
+                        src={article.featuredImage}
+                        alt={article.title}
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
+                  )}
 
-                {/* Article Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-primary mb-3 line-clamp-2">
-                    {article.title}
-                  </h3>
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-dark-text-secondary mb-2">
+                      <span className="font-medium uppercase tracking-wider">Research Paper</span>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <Calendar size={12} />
+                        <span>{formatDate(article.publishedAt)}</span>
+                      </div>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <Clock size={12} />
+                        <span>{article.readingTime} min read</span>
+                      </div>
+                    </div>
 
-                  <p className="text-gray-600 mb-4 line-clamp-3">
-                    {article.excerpt}
-                  </p>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-dark-text mb-2 group-hover:text-primary transition-colors">
+                      {article.title}
+                    </h3>
 
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center text-gray-500 text-sm">
-                      <Calendar size={14} className="mr-1" />
-                      <span className="mr-3">{formatDate(article.publishedAt)}</span>
-                      <Clock size={14} className="mr-1" />
-                      <span>{article.readingTime} min</span>
+                    <p className="text-gray-600 dark:text-dark-text-secondary mb-4 line-clamp-2">
+                      {article.excerpt}
+                    </p>
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-wrap gap-2">
+                        {article.tags.slice(0, 3).map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-1 text-xs font-medium text-gray-500 dark:text-dark-text-secondary bg-gray-100 dark:bg-dark-bg rounded"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {article.externalUrl ? (
+                        <a
+                          href={article.externalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-dark-text-secondary hover:text-primary dark:hover:text-dark-text transition-colors"
+                        >
+                          <span>Read</span>
+                          <ArrowRight size={14} />
+                        </a>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-dark-text-secondary hover:text-primary dark:hover:text-dark-text transition-colors cursor-pointer">
+                          <span>Read</span>
+                          <ArrowRight size={14} />
+                        </span>
+                      )}
                     </div>
                   </div>
-
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {article.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-1 bg-neutral/20 text-charcoal rounded text-xs"
-                      >
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <motion.button
-                    whileHover={{ x: 5 }}
-                    className="inline-flex items-center space-x-2 text-primary font-medium hover:text-secondary transition-colors duration-200"
-                  >
-                    <span>Read More</span>
-                    <ArrowRight size={14} />
-                  </motion.button>
                 </div>
               </motion.article>
             ))}
           </div>
+
+          {/* CTA - Simple, no gradient */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className='flex flex-col sm:flex-row items-center justify-between py-8 border-t border-gray-100 dark:border-dark-border mt-16'
+          >
+            <div>
+              <h3 className='text-xl font-semibold text-gray-900 dark:text-dark-text mb-1'>
+                Let's Build Something Together
+              </h3>
+              <p className='text-gray-500 dark:text-dark-text-secondary'>
+                Open to collaborating on impactful projects.
+              </p>
+            </div>
+            <div className='flex gap-3 mt-6 sm:mt-0'>
+              <a
+                href={`mailto:${personalInfo.email}`}
+                className='inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 transition-colors duration-200'
+              >
+                Get In Touch
+                <ArrowRight className='w-4 h-4' />
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="relative max-w-4xl w-full max-h-[90vh] flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-12 right-0 p-2 text-white hover:text-gray-300 transition-colors"
+              >
+                <X size={24} />
+              </button>
+              <img
+                src={selectedImage}
+                alt="Full size publication"
+                className="w-full h-full object-contain rounded-lg shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
         )}
 
-        {/* Newsletter Subscription */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 text-white">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Stay Updated with My Latest Insights
-            </h3>
-            <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-              Get notified when I publish new articles about sustainable technology,
-              frontend development, and industry insights.
-            </p>
-
-            <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-full text-charcoal placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-white text-primary rounded-full font-semibold hover:bg-neutral transition-colors duration-300"
-              >
-                Subscribe
-              </motion.button>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+      </AnimatePresence>
+    </>
   )
 }

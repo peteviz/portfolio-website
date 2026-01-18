@@ -13,12 +13,8 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
-    // { name: 'Skills', href: '#skills' },
-    // { name: 'Experience', href: '#experience' },
-    // { name: 'Education', href: '#education' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Sustainability', href: '#sustainability' },
-    { name: 'Articles', href: '#articles' },
+    { name: 'Publications', href: '#articles' },
   ]
 
   const smoothScrollTo = (elementId: string) => {
@@ -64,14 +60,14 @@ const Navigation = () => {
   }, [])
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-white/90 dark:bg-dark-bg/90 backdrop-blur-md shadow-md dark:shadow-dark-border/20">
-      <div className="text-2xl font-bold text-primary dark:text-white">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-sm border-b border-gray-100 dark:border-dark-border">
+      <div className="text-lg font-semibold text-gray-900 dark:text-white">
         <a href="#hero" onClick={() => smoothScrollTo('#hero')}>
           {personalInfo.name.split(' ')[0]}
         </a>
       </div>
-      
-      <div className="hidden md:flex items-center space-x-6">
+
+      <div className="hidden md:flex items-center space-x-8">
         {navItems.map((item) => (
           <a
             key={item.name}
@@ -80,11 +76,10 @@ const Navigation = () => {
               e.preventDefault()
               smoothScrollTo(item.href)
             }}
-            className={`transition-all duration-300 hover:text-primary dark:hover:text-secondary font-medium ${
-              activeSection === item.href 
-                ? 'text-primary dark:text-secondary border-b-2 border-primary dark:border-secondary' 
-                : 'text-gray-700 dark:text-dark-text-secondary'
-            }`}
+            className={`text-sm font-medium transition-colors duration-200 ${activeSection === item.href
+                ? 'text-gray-900 dark:text-white'
+                : 'text-gray-500 dark:text-dark-text-secondary hover:text-gray-900 dark:hover:text-white'
+              }`}
           >
             {item.name}
           </a>
@@ -92,7 +87,7 @@ const Navigation = () => {
         <a
           href={personalInfo.resumeUrl}
           download
-          className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 dark:bg-secondary dark:hover:bg-secondary/90 text-white rounded-lg transition-all duration-300"
+          className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-primary rounded-full hover:bg-primary/90 transition-colors duration-200"
         >
           <Download className="w-4 h-4" />
           Resume
@@ -104,7 +99,7 @@ const Navigation = () => {
         <ThemeToggle />
         <button
           onClick={() => setOpen(!open)}
-          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-200 dark:hover:bg-dark-border transition-colors"
+          className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 dark:hover:bg-dark-border transition-colors"
         >
           {open ? <X className="w-5 h-5 text-gray-700 dark:text-dark-text" /> : <Menu className="w-5 h-5 text-gray-700 dark:text-dark-text" />}
         </button>
@@ -116,9 +111,9 @@ const Navigation = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-full left-0 right-0 bg-white/95 dark:bg-dark-bg/95 backdrop-blur-md shadow-lg dark:shadow-dark-border/20"
+            className="absolute top-full left-0 right-0 bg-white dark:bg-dark-bg border-b border-gray-100 dark:border-dark-border"
           >
-            <div className="flex flex-col p-4 space-y-2">
+            <div className="flex flex-col p-4 space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -127,11 +122,10 @@ const Navigation = () => {
                     e.preventDefault()
                     smoothScrollTo(item.href)
                   }}
-                  className={`block p-3 rounded-md transition-colors ${
-                    activeSection === item.href 
-                      ? 'bg-primary dark:bg-secondary text-white' 
-                      : 'hover:bg-gray-100 dark:hover:bg-dark-surface dark:text-dark-text'
-                  }`}
+                  className={`p-3 rounded-lg text-sm font-medium transition-colors ${activeSection === item.href
+                      ? 'bg-gray-100 dark:bg-dark-surface text-gray-900 dark:text-white'
+                      : 'text-gray-600 dark:text-dark-text-secondary hover:bg-gray-50 dark:hover:bg-dark-surface'
+                    }`}
                 >
                   {item.name}
                 </a>
@@ -139,7 +133,7 @@ const Navigation = () => {
               <a
                 href={personalInfo.resumeUrl}
                 download
-                className="flex items-center justify-center gap-2 p-3 text-white bg-primary rounded-md hover:bg-primary/90 transition-colors"
+                className="flex items-center justify-center gap-2 p-3 text-sm font-medium text-white bg-primary rounded-lg hover:bg-primary/90 transition-colors"
               >
                 <Download className="w-4 h-4" />
                 Download Resume

@@ -10,17 +10,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Minimal palette - single accent with neutrals
         primary: '#2C3E50',
-        secondary: '#88B04B',
-        accent: '#FF6F61',
-        neutral: '#ECF0F1',
-        charcoal: '#34495E',
         // Dark mode colors
-        'dark-bg': '#1a1a1a',
-        'dark-surface': '#2d2d2d',
-        'dark-text': '#e5e5e5',
-        'dark-text-secondary': '#a3a3a3',
-        'dark-border': '#404040',
+        'dark-bg': '#0f0f0f',
+        'dark-surface': '#1a1a1a',
+        'dark-text': '#fafafa',
+        'dark-text-secondary': '#a1a1a1',
+        'dark-border': '#2a2a2a',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
