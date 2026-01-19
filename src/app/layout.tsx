@@ -6,6 +6,7 @@ import { ThemeProvider } from '../contexts/ThemeContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
+  metadataBase: new URL('https://akinde-peter.vercel.app'),
   title: 'Akinde Peter - Frontend Developer & Sustainability Expert',
   description: 'Portfolio of Akinde Peter, showcasing expertise in frontend development and sustainable construction practices.',
   keywords: 'frontend developer, sustainability expert, React, Next.js, green building, LEED, construction technology',
