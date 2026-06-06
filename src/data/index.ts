@@ -84,7 +84,7 @@ export const projects: Project[] = [
     "category": "frontend",
     "image": `${basePath}/images/projects/drone-planner.png`,
     "liveUrl": "/projects/drone-planner",
-    "githubUrl": "https://github.com/peteviz",
+    "githubUrl": "https://github.com/peteviz/drone_construct",
     "featured": true,
     "year": 2026,
     "challenges": "Eliminating drone-to-drone and drone-to-building collisions across different fleet sizes (3–6 drones) without serialising the assembly, despite drift between predicted and actual flight timing.",

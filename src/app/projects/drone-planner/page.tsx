@@ -26,7 +26,7 @@ export default function DronePlannerPage() {
         </h1>
 
         <a
-          href="https://github.com/peteviz"
+          href="https://github.com/peteviz/drone_construct"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-md px-2 py-1 text-sm font-medium text-neutral-300 transition-colors hover:bg-white/10 hover:text-white"
