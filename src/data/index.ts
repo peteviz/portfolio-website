@@ -76,6 +76,22 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
   {
+    "id": "drone-planner",
+    "title": "Drone Assembly Path Planner",
+    "description": "An interactive 3D prototype of the spatial and computational layer of drone-assisted building assembly: a fleet of autonomous drones builds a structure component by component, respecting how parts stack and staying collision-free in space-time.",
+    "longDescription": "A browser-based 3D prototype that demonstrates the spatial and computational layer of drone-assisted building assembly. A configurable fleet of autonomous drones constructs a building component by component, with dependency-aware sequencing (a part is placed only once the parts it rests on are in place), multi-drone coordination (drones work in parallel and lift heavy parts cooperatively), and collision-free scheduling (flights are deconflicted in space-time using a temporal-buffer reservation system, with any genuine clash flagged in real time). Positions are georeferenced and reported in a real-world coordinate system (UTM 32N / latitude-longitude). The application is built in TypeScript with Babylon.js on a strictly layered architecture (config → core → scene → simulation → ui), with the pure domain logic fully unit-tested under Vitest.",
+    "technologies": ["TypeScript", "Babylon.js", "Vite", "Vitest", "Tailwind CSS", "proj4", "WebGL"],
+    "category": "frontend",
+    "image": `${basePath}/images/projects/drone-planner.png`,
+    "liveUrl": "/projects/drone-planner",
+    "githubUrl": "https://github.com/peteviz",
+    "featured": true,
+    "year": 2026,
+    "challenges": "Eliminating drone-to-drone and drone-to-building collisions across different fleet sizes (3–6 drones) without serialising the assembly, despite drift between predicted and actual flight timing.",
+    "solution": "Predict each flight's space-time trajectory (including the carried load) and hold departures until the path is margin-clear within a temporal buffer window that absorbs prediction-vs-actual drift, keeping the assembly both collision-free and highly parallel.",
+    "impact": "A clear, architecturally honest demonstration of dependency-aware sequencing, multi-agent coordination, and space-time deconfliction for autonomous construction."
+  },
+  {
     "id": "1",
     "title": "Skill Sync",
     "description": "Developed a full-stack platform using React.js and Node.js facilitating skills acquisition through peer to peer project collaboration. Engineered the recruiter interface to filter candidates based on verified skills and metric-based achievement.",
