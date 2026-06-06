@@ -36,9 +36,11 @@ export default function DronePlannerPage() {
         </a>
       </header>
 
-      {/* The demo is a self-contained static build served from /public. */}
+      {/* The demo is a self-contained static build served from /public.
+          Use the directory form (not /index.html): with trailingSlash: true,
+          Vercel strips the .html extension and a direct .html URL 404s. */}
       <iframe
-        src="/demos/drone-planner/index.html"
+        src="/demos/drone-planner/"
         title="Drone Assembly Path Planner — interactive 3D demo"
         className="min-h-0 w-full flex-1 border-0"
         allow="fullscreen"
